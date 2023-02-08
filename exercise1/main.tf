@@ -9,16 +9,15 @@ terraform {
 
 provider "aws" {
   region                  = "us-west-2"
-  shared_credentials_file = "/Users/prathameshbusa/.aws/credentials"
-  profile                 = "007229802613_AdministratorAccess"
+  shared_credentials_file = "<path_of_aws_credentials_file>"
+  profile                 = "<name_of_profile>"
 }
 
 resource "aws_vpc" "main" {
   cidr_block = "10.0.0.0/16"
 
   tags = {
-    Name = "CloudAcademy"
-    Demo = "Terraform"
+    Name = "Terraform-Demo"
   }
 }
 
@@ -49,7 +48,6 @@ resource "aws_internet_gateway" "main" {
 
   tags = {
     "Name"  = "Main"
-    "Owner" = "CloudAcademy"
   }
 }
 
@@ -128,7 +126,7 @@ echo fin v1.00!
 EOF
 
   tags = {
-    Name = "CloudAcademy"
+    Name = "Terrraform_Demo"
   }
 }
 
